@@ -9,10 +9,9 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     raise ValueError("❌ GEMINI_API_KEY не найден в .env. Создайте файл .env и укажите его.")
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-# Токен GitHub не обязателен, но повышает лимиты. Если не указан – работаем анонимно (60 запросов/час).
+GITHUB_TOKEN = os.getenv("GH_PAT")
 if not GITHUB_TOKEN:
-    print("⚠️ GITHUB_TOKEN не найден. Лимит запросов к GitHub API будет 60/час.")
+    print("⚠️ GH_PAT не найден. Лимит запросов к GitHub API будет 60/час.")
 
 # ------------------- НАСТРОЙКИ МОДЕЛЕЙ -------------------
 AVAILABLE_MODELS = {
